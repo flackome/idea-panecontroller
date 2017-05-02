@@ -1,5 +1,4 @@
 # idea-panecontroller
-London is a Capital of Great Britain.(!uh oh)
 
 Welcome to this wonderful (lol) plugin. To start using this blessed extension you should click on one of the panes/tabs and save it to an appropriate mode: 
 
