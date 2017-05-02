@@ -1,0 +1,62 @@
+<idea-plugin>
+  <id>com.your.company.unique.plugin.id</id>
+  <name>Plugin display name here</name>
+  <version>1.0</version>
+  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+
+  <description><![CDATA[
+      Enter short description for your plugin here.<br>
+      <em>most HTML tags may be used</em>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="145.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+    <component>
+      <implementation-class>com.vasilenko.idea.plugin.panecontroller.SessionComponent</implementation-class>
+    </component>
+  </project-components>
+
+  <actions>
+    <group id="PaneController.Menu" text="_Pane Controller" description="Pane Session">
+      <add-to-group group-id="EditorTabsGroup" relative-to-action="ReopenClosedTab" anchor="before" />
+      <add-to-group group-id="EditorTabPopupMenu" relative-to-action="CopyReference" anchor="after" />
+      <add-to-group group-id="EditorPopupMenu" relative-to-action="CompareClipboardWithSelection" anchor="before" />
+      <separator/>
+      <action id="PaneController.Save" class="com.vasilenko.idea.plugin.panecontroller.action.Save" text="_Save Pane Session..." description="Save Pane Session">
+        <keyboard-shortcut first-keystroke="control shift T" second-keystroke="S" keymap="$default"/>
+      </action>
+      <action id="PaneController.Load" class="com.vasilenko.idea.plugin.panecontroller.action.Load" text="_Load Pane Session..." description="Load Pane Session">
+        <keyboard-shortcut first-keystroke="control shift T" second-keystroke="L" keymap="$default"/>
+      </action>
+      <separator/>
+    </group>
+  </actions>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
+
+</idea-plugin>
